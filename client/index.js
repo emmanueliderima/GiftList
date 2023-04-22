@@ -16,9 +16,8 @@ readline.question("Enter Your Name: ", (name) => {
   readline.close();
 });
 
-async function main(inputName) {
+async function main(name) {
   // TODO: how do we prove to the server we're on the nice list?
-  const name = inputName;
   const proof = Tree.getProof(niceList.findIndex((n) => n === name));
 
   const { data: gift } = await axios.post(`${serverUrl}/gift`, {
